@@ -40,7 +40,17 @@ function sweetTooth(totalNoOfSweets, sweetsConsumedByKaren, sweetsConsumedInNMet
 //As Lily moves closer, it gets colder. She checks the temperature on her mobile
 //It only shows in fahrenheit. Convert the data to celsius and return it.
 function convertToCelsius(fahrenheit) {
-    return (fahrenheit - 32) * 5 / 9;
+    let a = typeof fahrenheit;
+    if (a == "undefined")
+        return "Technical Error!";
+    else if (a == "object")
+        return "Technical Error!";
+    else if (a == "string")
+        return "Technical Error!";
+    else {
+        var c = (fahrenheit - 32) * 5 / 9;
+        return c;
+    }
 }
 //Progression 6:
 //Lily can now do multiple things to deal with this
@@ -49,7 +59,30 @@ function convertToCelsius(fahrenheit) {
 //3. Counsel her daughter herself
 //4. Lock her daughter in her room
 //Given a value, return which of these above actions Lily would take
-
+function aDifficultChoice(choice) {
+    switch (choice) {
+        case 1:
+            return "Take her daughter to a doctor";
+            break;
+        case 2:
+            return "Talk to her husband about it";
+            break;
+        case 3:
+            return "Counsel her daughter herself";
+            break;
+        case 4:
+            return "Lock her daughter in her room";
+            break;
+        case "I give up":
+            return "Refused to do anything for Karen";
+            break;
+        case -1:
+            return "Break down and give up all hope";
+            break;
+        default:
+            return "Wasn't able to decide";
+    }
+}
 //Progression 7:
 //Lily realized that she'd hurt her daughter
 //All she wants now is for her to stop crying
@@ -58,3 +91,11 @@ function convertToCelsius(fahrenheit) {
 //Take all of Lily's strategies and concatenate them to a single var
 //Seperate the strategies by a single space
 //Return the length of the complete strategy
+function consolekaren(strategies) {
+    let c = "";
+    for (var i = 0; i < strategies.length; i++)
+        c = c + strategies[i] + "";
+    var l = c.length - 1;
+    return l;
+
+}
